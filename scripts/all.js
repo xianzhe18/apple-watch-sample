@@ -284,7 +284,7 @@ $("#screen-container").on("touchstart mousedown", function(e) {
 			watch.scrollY = -watch.scrollRangeY + (watch.scrollMoveY + watch.scrollRangeY)/2;
 		}
 
-	  watch.iconMapRefresh(watch.screenW / 2, watch.screenH / 7, {x : watch.scrollX, y: watch.scrollY})
+	  watch.iconMapRefresh(watch.screenW > watch.screenH ? watch.screenH / 2 : watch.screenW / 2, watch.screenW > watch.screenH ? watch.screenH / 7 : watch.screenW / 7, {x : watch.scrollX, y: watch.scrollY})
 	});
 	$(window).on("touchend mouseup" ,function(e) {
 		$(window).off("touchmove mousemove touchend mouseup");
@@ -321,7 +321,7 @@ $("#screen-container").on("touchstart mousedown", function(e) {
 				watch.scrollY -= (watch.scrollY + watch.scrollRangeY)/4;
 			}
 
-			watch.iconMapRefresh(watch.screenW / 2, watch.screenH / 7, {x : watch.scrollX, y: watch.scrollY});
+			watch.iconMapRefresh(watch.screenW > watch.screenH ? watch.screenH / 2 : watch.screenW / 2, watch.screenW > watch.screenH ? watch.screenH / 7 : watch.screenW / 7, {x : watch.scrollX, y: watch.scrollY});
 			step++;
 		},16)
 	})
@@ -350,7 +350,7 @@ function homeOpening (){
 		watch.scrollMoveX = 0;
 		watch.scrollMoveY = 0;
 
-		watch.iconMapRefresh(watch.screenW / 2, watch.screenH / 7, {x : 0, y: 0});
+		watch.iconMapRefresh(watch.screenW > watch.screenH ? watch.screenH / 2 : watch.screenW / 2, watch.screenW > watch.screenH ? watch.screenH / 7 : watch.screenW / 7, {x : 0, y: 0});
 		var openingStep = 0;
 		var openingTimer = setInterval(function() {
 			if (openingStep > 36) {
@@ -358,7 +358,7 @@ function homeOpening (){
 				scrollAvailable = true;
 			};
 
-			watch.iconMapRefresh(watch.screenW / 2, watch.screenH / 7, {x : 0, y: 0})
+			watch.iconMapRefresh(watch.screenW > watch.screenH ? watch.screenH / 2 : watch.screenW / 2, watch.screenW > watch.screenH ? watch.screenH / 7 : watch.screenW / 7, {x : 0, y: 0})
 
 			openingStep++;
 		},16)
