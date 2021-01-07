@@ -8,6 +8,24 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/screen.css">
+    <style>
+        #border-box-2x, #border-box-4x {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            touch-action: none;
+            user-select: none;
+            pointer-events: none;
+            display: none;
+        }
+        #border-box-2x {
+            border: solid 2px red;
+        }
+        #border-box-4x {
+            border: solid 2px green;
+        }
+    </style>
 </head>
 <link rel="icon" type="image/ico" href="img/favicon.ico">
 <body>
@@ -17,7 +35,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid add-block">
     <div class="row">
         <div class="col-md-6 text-sm-right text-center">
             <textarea id="contentTxt" class="content-txt"></textarea>
@@ -104,6 +122,9 @@
         </div>
     </div>
 </div>
+
+<div id="border-box-4x"></div>
+<div id="border-box-2x"></div>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
